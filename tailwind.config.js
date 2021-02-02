@@ -1,11 +1,19 @@
 module.exports = {
-  purge: [],
-  darkMode: false, // or 'media' or 'class'
-  theme: {
-    extend: {},
-  },
-  variants: {
-    extend: {},
-  },
-  plugins: [],
-}
+   purge: [],
+   darkMode: false, // or 'media' or 'class'
+   theme: {
+      extend: {
+         fontFamily: {
+            Lato: ["Lato", "sans-serif"],
+            Raleway: ["Raleway", "sans-serif"],
+         },
+      },
+   },
+   variants: {
+      extend: {
+         translate: ["group-hover"],
+         transitionDuration: ["group-hover"],
+      },
+   },
+   plugins: [],
+};
