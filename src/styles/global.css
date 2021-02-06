@@ -11,20 +11,35 @@
    h2 {
       @apply text-5xl font-Raleway font-medium;
    }
-   h3{
+   h3 {
       @apply text-4xl font-Raleway font-medium;
    }
-   h4{
+   h4 {
       @apply text-3xl font-Raleway;
    }
-   h5{
+   h5 {
       @apply text-2xl font-Raleway;
    }
-   h6{
+   h6 {
       @apply text-xl font-Lato;
    }
-   p{
+   p {
       @apply text-base font-Lato;
    }
+}
 
+input {
+   @apply bg-transparent border-white py-3 pr-12 border border-t-0 border-r-0 border-l-0 placeholder-white;
+}
+
+
+select {
+   @apply border border-t-0 border-r-0 border-l-0;
+}
+option {
+   @apply text-gray-600;
+}
+
+textarea{
+   @apply col-span-2 bg-transparent border border-t-0 border-r-0 border-l-0 pb-24 resize-none placeholder-white px-0
 }

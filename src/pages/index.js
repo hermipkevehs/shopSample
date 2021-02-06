@@ -1,12 +1,13 @@
 import React from "react";
+import HomeContact from "../components/HomeContact";
 import Layout from "../components/Layout";
-import Products from "../components/Products";
+
 
 const index = () => {
 
    return (
       <Layout>
-         <Products />
+         <HomeContact/>
       </Layout>
    );
 };

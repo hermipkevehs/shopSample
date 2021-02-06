@@ -13,6 +13,7 @@ module.exports = {
       extend: {
          translate: ["group-hover"],
          transitionDuration: ["group-hover"],
+         transitionTimingFunction: ["group-hover"],
       },
    },
    plugins: [],
