@@ -4,7 +4,7 @@ import Products from "../components/Products";
 
 const shop = () => {
    return (
-      <Layout>
+      <Layout className="relative">
          <Products/>
       </Layout>
    )

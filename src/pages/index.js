@@ -1,13 +1,11 @@
-import React from "react";
-import HomeContact from "../components/HomeContact";
+import React, { useState } from "react";
 import Layout from "../components/Layout";
-
+import HomeContact from '../components/HomeContact'
 
 const index = () => {
-
    return (
       <Layout>
-         <HomeContact/>
+         <HomeContact />
       </Layout>
    );
 };

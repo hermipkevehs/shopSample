@@ -6,7 +6,6 @@ const HomeContact = () => {
    return (
       <div className="bg-black py-12 mt-5 flex text-white justify-center flex-wrap">
          <div className="self-start flex flex-col items-center py-8 space-y-4">
-            {" "}
             <h2>Contact</h2>
             <h6>134 Tanguile Street, Marikina Heights, Marikina City</h6>
             <h6>hermipkevehs@gmail.com</h6>
@@ -17,7 +16,7 @@ const HomeContact = () => {
                {homeInput.map((input, index) => {
                   console.log(input.placeholder);
                   return <InputComp type={input.type} id={input.id} placeholder={input.placeholder} key={index} />;
-               })}{" "}
+               })}
                <textarea name="help" resize="none" placeholder="Type your message here..." />
             </div>
             <button type="submit" className="px-12 py-4 bg-white text-black self-center mt-8 hover:bg-opacity-20 hover:text-white">
