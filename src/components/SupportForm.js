@@ -21,7 +21,6 @@ const SupportForm = () => {
          <Image fluid={data.support.background.fluid} />
          <div className="bg-black py-12 flex flex-col text-white">
             <div className="self-center flex flex-col items-center py-8 space-y-4">
-               {" "}
                <h2>Contact Support</h2>
                <h6>How Can We Help?</h6>
             </div>
