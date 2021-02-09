@@ -2,15 +2,29 @@ import React from "react";
 import { useStaticQuery, graphql, Link } from "gatsby";
 import { Background, ModalWrapper } from "../styles/ProductStyles";
 import Image from "gatsby-image";
-const ProductModal = ({ showModal }) => {
+const ProductModal = ({ showModal, slug }) => {
+   const data = useStaticQuery(graphql`
+  query Cool  {
+      products: allContentfulECommerce {
+         nodes {
+            img {
+               fluid {
+                  ...GatsbyContentfulFluid
+               }
+            }
+            price
+            productName
+            slug
+         }
+      }
+   }
+`);
    return (
       <>
          {showModal ? (
             <Background>
                <ModalWrapper>
-                  {data.product.img.map((image) => {
-                     return <Image fluid={image.fluid} style={{ width: "5rem" }} />;
-                  })}
+            
                </ModalWrapper>
             </Background>
          ) : null}

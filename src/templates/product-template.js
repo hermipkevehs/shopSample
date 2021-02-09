@@ -20,7 +20,7 @@ const ComponentName = ({ data }) => {
    return (
       <Layout>
          <IconContext.Provider value={{ size: "1.5rem" }}>
-            <article className="mt-20 ">
+            <article className="my-20 ">
                <section className="flex justify-around">
                   <div>
                      <Link> Home </Link>/<Link> Shop </Link> /I am a product
@@ -32,7 +32,7 @@ const ComponentName = ({ data }) => {
                   </div>
                </section>
                <section className="flex flex-col items-center space-y-4 py-24">
-                  <div>{clicked ? <Image fluid={img[1].fluid} style={{ width: "40rem" }} /> : <Image fluid={img[0].fluid} style={{ width: "50rem" }} />}</div>
+                  <div>{clicked ? <Image fluid={img[1].fluid} style={{ width: "50rem" }} /> : <Image fluid={img[0].fluid} style={{ width: "50rem" }} />}</div>
                   <div className="flex space-x-4">
                      {img.map((image, index) => {
                         return (

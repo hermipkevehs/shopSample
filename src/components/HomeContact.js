@@ -4,7 +4,7 @@ import InputComp from "./InputComp";
 
 const HomeContact = () => {
    return (
-      <div className="bg-black py-12 mt-5 flex text-white justify-center flex-wrap">
+      <div className="bg-gray-800 py-12 mt-5 flex text-white justify-center flex-wrap">
          <div className="self-start flex flex-col items-center py-8 space-y-4">
             <h2>Contact</h2>
             <h6>134 Tanguile Street, Marikina Heights, Marikina City</h6>

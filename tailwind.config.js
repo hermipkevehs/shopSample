@@ -14,6 +14,7 @@ module.exports = {
          translate: ["group-hover"],
          transitionDuration: ["group-hover"],
          transitionTimingFunction: ["group-hover"],
+         inset: ["group-hover", "focus"],
       },
    },
    plugins: [],
