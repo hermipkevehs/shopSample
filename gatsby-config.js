@@ -3,6 +3,7 @@ require("dotenv").config({
 });
 
 module.exports = {
+   pathPrefix: "/shopSample",
    plugins: [
       `gatsby-transformer-sharp`,
       `gatsby-plugin-sharp`,
