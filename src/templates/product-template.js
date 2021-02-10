@@ -119,11 +119,7 @@ export const query = graphql`
          }
          shippingInfo {
             Mode
-            Options {
-               Option_1
-               Option_2
-               Option_3
-            }
+            Options
          }
       }
    }

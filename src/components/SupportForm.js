@@ -29,7 +29,7 @@ const SupportForm = () => {
                   {inputData.map((input, index) => {
                      console.log(input.placeholder);
                      return <InputComp type={input.type} id={input.id} placeholder={input.placeholder} key={index} />;
-                  })}{" "}
+                  })}
                   <select id="issues" name="issues" className="col-span-2 py-4 bg-transparent text">
                      <option value="" disabled selected hidden>
                         Choose an Issue

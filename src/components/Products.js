@@ -40,7 +40,7 @@ const Products = () => {
                      <h6>{product.productName}</h6>
                      <p>Php {product.price}.00</p>
                   </Link>
-                  <ProductModal showModal={showModal} slug={slug}/>
+            
             
                </article>)
               
