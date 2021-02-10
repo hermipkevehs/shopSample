@@ -1,13 +1,25 @@
 import React, { createContext, useReducer } from "react";
-const initialState = {
+const NavInitialState = {
    isLogin: false,
    showModal: false,
    buttonClicked: false,
 };
+const CartInitialState = {count:0};
 
-export const NavbarContext = createContext();
+export const GlobalContext = createContext();
 
-const reducer = (state, action) => {
+const CartReducer = (state, action) => {
+   switch(action.type){
+      case "ADDTOCART": 
+         return {count: state+1}
+      case "REMOVE":
+         return {count: state-1}
+      case "RESET":
+         return {count: 0}
+   }
+}
+
+const NavReducer = (state, action) => {
    switch (action.type) {
       case "SETLOGIN":
          return { ...state, isLogin: !state.isLogin };
@@ -24,7 +36,7 @@ const reducer = (state, action) => {
    }
 };
 
-export const NavbarProvider = ({ children }) => {
-   const [state, dispatch] = useReducer(reducer, initialState);
-   return <NavbarContext.Provider value={[state, dispatch]}>{children}</NavbarContext.Provider>;
+export const GlobalProvider = ({ children }) => {
+   const [navstate, dispatch] = useReducer(NavReducer, NavInitialState);
+   return <GlobalContext.Provider value={[navstate, dispatch]}>{children}</GlobalContext.Provider>;
 };

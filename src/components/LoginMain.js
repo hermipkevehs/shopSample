@@ -1,10 +1,10 @@
 import React, {useContext} from 'react'
-import { NavbarContext } from '../context/NavbarProvider'
+import { GlobalContext } from '../context/GlobalProvider'
 import { FcGoogle } from "react-icons/fc";
 import { FaFacebookSquare } from "react-icons/fa";
 
 const LoginMain = () => {
-   const [{isLogin}, dispatch] = useContext(NavbarContext)
+   const [{isLogin}, dispatch] = useContext(GlobalContext)
    return (
       <>
       <div className="space-y-6 text-white">

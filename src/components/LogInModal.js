@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import styled from "styled-components";
 import { AiOutlineClose } from "react-icons/ai";
 import LogInForm from "./LogInForm";
-import { NavbarContext } from "../context/NavbarProvider";
+import { GlobalContext } from "../context/GlobalProvider";
 import LoginMain from "./LoginMain";
 
 const Background = styled.div`
@@ -17,7 +17,7 @@ const Background = styled.div`
 `;
 
 const LogInModal = () => {
-   const [{ showModal, isLogin, buttonClicked }, dispatch] = useContext(NavbarContext);
+   const [{ showModal, isLogin, buttonClicked }, dispatch] = useContext(GlobalContext);
    return (
       <>
          {showModal ? (
@@ -32,7 +32,7 @@ const LogInModal = () => {
                   </div>
                   {buttonClicked? <LogInForm/>: <LoginMain/>}
                </div>
-               <div className="absolute right-14 top-14 cursor-pointer" onClick={() => dispatch({type:"RESET"})}>
+               <div className="absolute right-14 top-14 cursor-pointer" onClick={() =>dispatch({type:"RESET"})}>
                   <AiOutlineClose size="2rem" />
                </div>
             </Background>

@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import styled from "styled-components";
 import { FcGoogle } from "react-icons/fc";
 import { FaFacebookSquare } from "react-icons/fa";
-import { NavbarContext } from "../context/NavbarProvider";
+import { GlobalContext } from "../context/GlobalProvider";
 
 const Background = styled.div`
    width: 100vw;
@@ -16,7 +16,7 @@ const Background = styled.div`
 `;
 
 const LogInForm = () => {
-   const [{ isLogin }] = useContext(NavbarContext);
+   const [{ isLogin }] = useContext(GlobalContext);
    return (
       <>
          <div className="flex flex-col space-y-8">

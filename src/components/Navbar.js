@@ -1,13 +1,14 @@
-import React, {useContext}from "react";
+import React, {useContext, useState}from "react";
 import { Link } from "gatsby";
 import { FaFacebook, FaUserCircle } from "react-icons/fa";
 import { HiOutlineShoppingBag } from "react-icons/hi";
 import LogInModal from "./LogInModal"
-import { NavbarContext } from "../context/NavbarProvider";
+import { GlobalContext} from "../context/GlobalProvider";
+import CartModal from "./CartModal";
 
 const Navbar = () => {
-   const [state, dispatch] = useContext(NavbarContext)
-   console.log(state.showModal, dispatch)
+   const [navstate, dispatch] = useContext(GlobalContext)
+   const [cartClicked, setCartClicked] = useState(false);
    return (
       <nav className="bg-black sticky top-0 z-10">
          <div className="px-20 py-10 text-white">
@@ -18,7 +19,7 @@ const Navbar = () => {
                   </li>
                   <li className="cursor-pointer" onClick={()=>dispatch({type: "LOGINMODAL"})}>Log in</li>
                   <li>
-                     <HiOutlineShoppingBag size="2rem" className="text-white"></HiOutlineShoppingBag>
+                     <HiOutlineShoppingBag size="2rem" className="text-white" onClick={()=>{setCartClicked(!cartClicked)}}><h6 className="text-white">2</h6></HiOutlineShoppingBag>
                   </li>
                </ul>
             </div>
@@ -43,6 +44,7 @@ const Navbar = () => {
             </div>
          </div>
          <LogInModal/>
+         <CartModal cartClicked={cartClicked} setCartClicked={setCartClicked}/>
       </nav>
    );
 };
