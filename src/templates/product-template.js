@@ -51,15 +51,39 @@ const ComponentName = ({ data }) => {
                      </div>
                      <div className="space-y-4">
                         <h5>Shipping Info</h5>
-                        <h6>Mode of Payment</h6>
-                        <form className="flex space-x-8">
-                           {shippingInfo.Mode.map((type) => {
-                              return (
-                                 <div><input type="radio" id={type} /> <label htmlFor={type}>{type}</label></div>
-                              );
-                           })}
-                        </form>
-                        <h6>Options</h6>
+                        <div>
+                           <h6>Mode of Payment</h6>
+                           <form className="flex space-x-8">
+                              {shippingInfo.Mode.map((type) => {
+                                 return (
+                                    <div>
+                                       <input type="radio" id={type} /> <label htmlFor={type}>{type}</label>
+                                    </div>
+                                 );
+                              })}
+                           </form>
+                        </div>
+                        <div>
+                           <h6>Options</h6>
+                           <table>
+                              {shippingInfo.Options.map((option) => {
+                                 return (
+                                    <tr className="">
+                                       <td className="space-x-4">
+                                          <input type="radio" id={option.Courier} />
+                                          <label htmlFor={option.Courier}>{option.Courier}</label>
+                                       </td>
+                                       <td className="text-center px-5">
+                                          <p>{option.Days}</p>
+                                       </td>
+                                       <td className="text-center">
+                                          <p>{option.Price}</p>
+                                       </td>
+                                    </tr>
+                                 );
+                              })}
+                           </table>
+                        </div>
                      </div>
                   </div>
                   <div className="space-y-6">
@@ -74,7 +98,7 @@ const ComponentName = ({ data }) => {
                      </div>
                      <div className="py-2">
                         <form className="space-y-2">
-                        <h6>Size</h6>
+                           <h6>Size</h6>
                            <select id="sizes" name="sizes" className="text-black pr-8 pl-2 py-4 border border-gray-300">
                               <option value="" disabled selected hidden>
                                  Select Size
@@ -84,7 +108,7 @@ const ComponentName = ({ data }) => {
                               })}
                            </select>
                            <h6>Quantity</h6>
-                           <input type="number" min="1" max="1000000" className="border border-gray-300 text-center px-0" placeholder="1"/>
+                           <input type="number" min="1" max="1000000" className="border border-gray-300 text-center px-0" placeholder="1" />
                         </form>
                      </div>
                      <button className="bg-blue-400 py-2 px-12">Add to Cart</button>
@@ -119,7 +143,11 @@ export const query = graphql`
          }
          shippingInfo {
             Mode
-            Options
+            Options {
+               Courier
+               Days
+               Price
+            }
          }
       }
    }
