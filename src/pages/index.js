@@ -8,6 +8,7 @@ const index = () => {
       <Layout>
          <Header />
          <HomeContact />
+         awesomefsadffjasfjlaksfjaklsjfa
       </Layout>
    );
 };
