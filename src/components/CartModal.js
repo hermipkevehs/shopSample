@@ -1,6 +1,7 @@
-import React, { useContext } from "react";
+import React from "react";
 import styled from "styled-components";
 import { AiOutlineRight } from "react-icons/ai";
+import CartProduct from "./CartProduct";
 
 const Background = styled.div`
    width: 100vw;
@@ -18,13 +19,14 @@ const CartModal = ({ cartClicked, setCartClicked }) => {
       <>
          {cartClicked ? (
             <Background>
-               <div className="w-1/4 bg-white">
+               <div className="w-1/3 bg-white">
                   <div className="bg-black text-white flex items-center py-8 space-x-20">
                      <div className="ml-8" onClick={()=>{setCartClicked()}}>
                         <AiOutlineRight size="1.5rem" />
                      </div>
                      <h5 className="">Cart</h5>
                   </div>
+                  <CartProduct/>
                </div>
             </Background>
          ) : null}
