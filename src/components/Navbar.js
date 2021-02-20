@@ -9,6 +9,8 @@ import CartModal from "./CartModal";
 const Navbar = () => {
    const [navstate, dispatch] = useContext(GlobalContext)
    const [cartClicked, setCartClicked] = useState(false);
+
+   
    return (
       <nav className="bg-black sticky top-0 z-10">
          <div className="px-20 py-10 text-white">
@@ -25,7 +27,7 @@ const Navbar = () => {
             </div>
             <div className="border border-white my-3"></div>
             <div className="flex justify-between">
-               <h4>DANIEL'S KNIT SHOP</h4>
+               <h4>NERI'S HANDMADE KNITS</h4>
                <ul className="flex space-x-5 items-center">
                   <li>
                      <Link to="/">Home</Link>

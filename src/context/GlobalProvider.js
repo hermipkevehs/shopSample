@@ -1,23 +1,13 @@
 import React, { createContext, useReducer } from "react";
+import { useDataProducts } from "../data/useDataProducts";
+
 const NavInitialState = {
    isLogin: false,
    showModal: false,
    buttonClicked: false,
 };
-const CartInitialState = {count:0};
 
 export const GlobalContext = createContext();
-
-const CartReducer = (state, action) => {
-   switch(action.type){
-      case "ADDTOCART": 
-         return {count: state+1}
-      case "REMOVE":
-         return {count: state-1}
-      case "RESET":
-         return {count: 0}
-   }
-}
 
 const NavReducer = (state, action) => {
    switch (action.type) {

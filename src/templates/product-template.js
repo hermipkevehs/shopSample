@@ -1,29 +1,27 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { graphql, Link } from "gatsby";
 import Layout from "../components/Layout";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import Image from "gatsby-image";
-import { IconContext } from "react-icons";
 import { Color } from "../styles/ProductStyles";
+import { ProductContext, ProductProvider } from "../context/ProductProvider";
 
 const ComponentName = ({ data }) => {
    const {
-      products: { img, productName, productSize, productColor, price, productInfo, shippingInfo },
+      products: { img, productName, productSize, productColor, price, productInfo, shippingInfo, slug },
    } = data;
-   console.log(data);
-
    const [clicked, setClick] = useState(false);
-
    const handleClick = (index) => {
       index === 0 ? setClick(false) : setClick(true);
    };
+   const [productstate, dispatch] = useContext(ProductContext)
+   console.log(productstate)
    return (
       <Layout>
-         <IconContext.Provider value={{ size: "1.5rem" }}>
-            <article className="my-20 ">
+            <article className="my-20 " key={slug}>
                <section className="flex justify-around">
                   <div>
-                     <Link> Home </Link>/<Link> Shop </Link> /I am a product
+                     <Link to="/"> Home </Link>/<Link to="/"> Shop </Link> /I am a product
                   </div>
                   <div className="flex items-center">
                      <FaChevronLeft />
@@ -37,7 +35,7 @@ const ComponentName = ({ data }) => {
                      {img.map((image, index) => {
                         return (
                            <div onClick={() => handleClick(index)} className="cursor-pointer">
-                              <Image fluid={image.fluid} style={{ width: "5rem" }} />
+                              <Image fluid={image.fluid} style={{ width: "5rem" }} key={index}/>
                            </div>
                         );
                      })}
@@ -54,10 +52,10 @@ const ComponentName = ({ data }) => {
                         <div>
                            <h6>Mode of Payment</h6>
                            <form className="flex space-x-8">
-                              {shippingInfo.Mode.map((type) => {
+                              {shippingInfo.Mode.map((type, index) => {
                                  return (
-                                    <div>
-                                       <input type="radio" id={type} /> <label htmlFor={type}>{type}</label>
+                                    <div key={index}>
+                                       <input type="radio" id={type} name="radio2" /> <label htmlFor={type}>{type}</label>
                                     </div>
                                  );
                               })}
@@ -66,11 +64,11 @@ const ComponentName = ({ data }) => {
                         <div>
                            <h6>Options</h6>
                            <table>
-                              {shippingInfo.Options.map((option) => {
+                              {shippingInfo.Options.map((option, index) => {
                                  return (
-                                    <tr className="">
+                                    <tr className="" key={index}>
                                        <td className="space-x-4">
-                                          <input type="radio" id={option.Courier} />
+                                          <input type="radio" id={option.Courier} name="radio" />
                                           <label htmlFor={option.Courier}>{option.Courier}</label>
                                        </td>
                                        <td className="text-center px-5">
@@ -91,8 +89,8 @@ const ComponentName = ({ data }) => {
                      <div>
                         <h6>Color</h6>
                         <div className="flex space-x-4">
-                           {productColor.map((color) => {
-                              return <Color color={color.content}></Color>;
+                           {productColor.map((color, index) => {
+                              return <Color color={color.content} key={index}></Color>;
                            })}
                         </div>
                      </div>
@@ -103,19 +101,18 @@ const ComponentName = ({ data }) => {
                               <option value="" disabled selected hidden>
                                  Select Size
                               </option>
-                              {productSize.map((size) => {
-                                 return <option value={size.content}>{size.content}</option>;
+                              {productSize.map((size, index) => {
+                                 return <option value={size.content} key={index}>{size.content}</option>;
                               })}
                            </select>
                            <h6>Quantity</h6>
                            <input type="number" min="1" max="1000000" className="border border-gray-300 text-center px-0" placeholder="1" />
                         </form>
                      </div>
-                     <button className="bg-blue-400 py-2 px-12">Add to Cart</button>
+                     <button className="bg-blue-400 py-2 px-12" onClick={()=>dispatch({type: "ONADD", payload:data})}>Add to Cart</button>
                   </div>
                </section>
             </article>
-         </IconContext.Provider>
       </Layout>
    );
 };
@@ -130,6 +127,7 @@ export const query = graphql`
                ...GatsbyContentfulFluid
             }
          }
+         slug
          price
          productName
          productColor {
