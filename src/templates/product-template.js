@@ -15,7 +15,6 @@ const ComponentName = ({ data }) => {
       index === 0 ? setClick(false) : setClick(true);
    };
    const [productstate, dispatch] = useContext(ProductContext)
-   console.log(productstate)
    return (
       <Layout>
             <article className="my-20 " key={slug}>

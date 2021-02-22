@@ -2,10 +2,10 @@ import React, { useContext } from "react";
 import { ProductContext } from "../context/ProductProvider";
 import Image from "gatsby-image";
 import { AiOutlineCloseCircle } from "react-icons/ai";
+import TotalPrice from "./TotalPrice";
 
 const CartProduct = () => {
    const [productstate, dispatch] = useContext(ProductContext);
-   console.log(productstate);
    return (
       <div className="mt-4 flex flex-col items-center space-y-4">
          {productstate.cartItems.map((product) => {
