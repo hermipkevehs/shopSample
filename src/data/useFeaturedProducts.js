@@ -1,22 +1,22 @@
 import { useStaticQuery, graphql } from "gatsby";
 
-export const useDataProducts = () => {
-   const { products } = useStaticQuery(graphql`
-      query MyProducts {
-         products: allContentfulECommerce {
+export const useFeaturedProducts = () => {
+   const { featured } = useStaticQuery(graphql`
+      query FeaturedProducts {
+         featured: allContentfulECommerce(filter: { featured: { eq: true } }) {
             nodes {
+               productName
                img {
                   fluid {
                      ...GatsbyContentfulFluid
                   }
                }
                price
-               productName
                slug
             }
          }
       }
    `);
-   const { nodes } = products;
+   const { nodes } = featured;
    return nodes;
 };

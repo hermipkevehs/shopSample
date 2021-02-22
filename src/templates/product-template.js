@@ -4,7 +4,7 @@ import Layout from "../components/Layout";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import Image from "gatsby-image";
 import { Color } from "../styles/ProductStyles";
-import { ProductContext, ProductProvider } from "../context/ProductProvider";
+import { ProductContext } from "../context/ProductProvider";
 
 const ComponentName = ({ data }) => {
    const {

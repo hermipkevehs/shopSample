@@ -1,5 +1,4 @@
 import React, { createContext, useReducer } from "react";
-import { useDataProducts } from "../data/useDataProducts";
 
 const NavInitialState = {
    isLogin: false,

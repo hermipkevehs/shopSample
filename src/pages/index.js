@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import Layout from "../components/Layout";
 import Header from "../components/Header";
 import ProductCarousel from "../components/ProductCarousel";
@@ -7,7 +7,7 @@ const index = () => {
    return (
       <Layout>
          <Header />
-         <ProductCarousel/>
+         <ProductCarousel />
       </Layout>
    );
 };

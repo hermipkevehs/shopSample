@@ -1,4 +1,4 @@
-import React, { createContext, useReducer, useState } from "react";
+import React, { createContext, useReducer } from "react";
 
 const initialState = {
    cartItems: [],
@@ -15,6 +15,21 @@ const ProductReducer = (state, action) => {
          } else {
             return { cartItems: [...state.cartItems, { payload: action.payload, qty: 1 }] };
          }
+      case "ONDECREASE":
+         const e = state.cartItems.find((x) => x.payload.products.slug === action.payload.products.slug);
+         if (e.qty === 1) {
+            return { cartItems: state.cartItems.filter((x) => x.payload.products.slug !== action.payload.products.slug) };
+         } else {
+            return { cartItems: state.cartItems.map((x) => (x.payload.products.slug === action.payload.products.slug ? { ...e, qty: e.qty - 1 } : x)) };
+         }
+      case "ONREMOVE":
+         const ex = state.cartItems.find((x) => x.payload.products.slug === action.payload.products.slug);
+         if (ex) {
+            return {
+               cartItems: state.cartItems.filter((x) => x.payload.products.slug !== action.payload.products.slug),
+            };
+         }
+
       default:
          return state;
    }

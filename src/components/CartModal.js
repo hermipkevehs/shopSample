@@ -19,7 +19,7 @@ const CartModal = ({ cartClicked, setCartClicked }) => {
       <>
          {cartClicked ? (
             <Background>
-               <div className="w-1/3 bg-white">
+               <div className="w-1/3 bg-white overflow-y-scroll">
                   <div className="bg-black text-white flex items-center py-8 space-x-20">
                      <div className="ml-8" onClick={()=>{setCartClicked()}}>
                         <AiOutlineRight size="1.5rem" />
