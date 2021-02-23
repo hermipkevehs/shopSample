@@ -18,16 +18,6 @@ const ComponentName = ({ data }) => {
    return (
       <Layout>
             <article className="my-20 " key={slug}>
-               <section className="flex justify-around">
-                  <div>
-                     <Link to="/"> Home </Link>/<Link to="/"> Shop </Link> /I am a product
-                  </div>
-                  <div className="flex items-center">
-                     <FaChevronLeft />
-                     <span>Prev | Next</span>
-                     <FaChevronRight />
-                  </div>
-               </section>
                <section className="flex flex-col items-center space-y-4 py-24">
                   <div>{clicked ? <Image fluid={img[1].fluid} style={{ width: "50rem" }} /> : <Image fluid={img[0].fluid} style={{ width: "50rem" }} />}</div>
                   <div className="flex space-x-4">
@@ -104,8 +94,6 @@ const ComponentName = ({ data }) => {
                                  return <option value={size.content} key={index}>{size.content}</option>;
                               })}
                            </select>
-                           <h6>Quantity</h6>
-                           <input type="number" min="1" max="1000000" className="border border-gray-300 text-center px-0" placeholder="1" />
                         </form>
                      </div>
                      <button className="bg-blue-400 py-2 px-12" onClick={()=>dispatch({type: "ONADD", payload:data})}>Add to Cart</button>

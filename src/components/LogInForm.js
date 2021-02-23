@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { FcGoogle } from "react-icons/fc";
 import { FaFacebookSquare } from "react-icons/fa";
 import { GlobalContext } from "../context/GlobalProvider";
+import { Link } from "gatsby";
 
 const Background = styled.div`
    width: 100vw;
@@ -36,8 +37,12 @@ const LogInForm = () => {
                <hr className="w-28 border border-black"></hr>
             </div>
             <div className="flex space-x-4">
-               <FaFacebookSquare color="#3b5998" size="2rem" />
-               <FcGoogle size="2rem" />
+               <Link to="https://web.facebook.com/?_rdc=3&_rdr" target="_blank">
+                  <FaFacebookSquare color="#3b5998" size="2rem" />
+               </Link>
+               <Link to="https://accounts.google.com/" target="_blank">
+                  <FcGoogle size="2rem" />
+               </Link>
             </div>
          </div>
       </>

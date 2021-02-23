@@ -4,6 +4,7 @@ import { AiOutlineRight } from "react-icons/ai";
 import CartProduct from "./CartProduct";
 import TotalPrice from "./TotalPrice";
 import { ProductContext } from "../context/ProductProvider";
+import { Link } from "gatsby";
 
 const Background = styled.div`
    width: 100vw;
@@ -25,7 +26,7 @@ const CartModal = ({ cartClicked, setCartClicked }) => {
                <div className="w-1/3 bg-white overflow-y-scroll">
                   <div className="bg-black text-white flex items-center py-8 space-x-20">
                      <div
-                        className="ml-8"
+                        className="ml-8 cursor-pointer"
                         onClick={() => {
                            setCartClicked();
                         }}
@@ -35,12 +36,19 @@ const CartModal = ({ cartClicked, setCartClicked }) => {
                      <h5 className="">Cart</h5>
                   </div>
                   {productstate.cartItems.length === 0 ? (
-                     <h6 className="text-center mt-12">Cart is Empty</h6>
+                     <h6 className="text-center mt-12 ">Cart is Empty</h6>
                   ) : (
-                     <div className="flex flex-col">
+                     <div className="flex flex-col ">
                         <CartProduct />
-                        <TotalPrice />
-                        <button className="self-center px-24 py-3 bg-gray-400">View Cart</button>
+                        <div className="flex flex-col ml-8 mt-12 w-4/5">
+                           <div className="border-b border-black pb-4 mb-4">
+                              <h5>Subtotal</h5>
+                              <TotalPrice /> 
+                           </div>
+                           <Link to="/cart" className="self-center">
+                              <button className="px-24 py-3 bg-gray-400">View Cart</button>
+                           </Link>
+                        </div>
                      </div>
                   )}
                </div>

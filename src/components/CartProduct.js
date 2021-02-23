@@ -2,7 +2,6 @@ import React, { useContext } from "react";
 import { ProductContext } from "../context/ProductProvider";
 import Image from "gatsby-image";
 import { AiOutlineCloseCircle } from "react-icons/ai";
-import TotalPrice from "./TotalPrice";
 
 const CartProduct = () => {
    const [productstate, dispatch] = useContext(ProductContext);

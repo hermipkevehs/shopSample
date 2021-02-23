@@ -7,11 +7,8 @@ const TotalPrice = () => {
 
    return (
       <>
-         {productstate.cartItems.length === 0 ? null : (
-            <div className="my-12 ml-12 border-b border-gray-500 w-4/5 pb-5">
-               <h4>Subtotal</h4>
-               <h5>Php {totalPrice}.00</h5>
-            </div>
+         {productstate.cartItems.length === 0 ?  <h6>Php {totalPrice}.00</h6> : (
+               <h6>Php {totalPrice}.00</h6>
          )}
       </>
    );
