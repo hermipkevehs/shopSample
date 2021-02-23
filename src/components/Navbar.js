@@ -11,7 +11,7 @@ const Navbar = () => {
    const [cartClicked, setCartClicked] = useState(false);
 
    return (
-      <nav className="bg-black sticky top-0 z-10">
+      <nav className="bg-black sticky top-0 z-50">
          <div className="px-20 py-10 text-white">
             <div>
                <ul className="flex space-x-4 justify-end">
@@ -45,10 +45,13 @@ const Navbar = () => {
                      <Link to="/shop">Shop</Link>
                   </li>
                   <li>
+                     <Link to="/about">About</Link>
+                  </li>
+                  <li>
                      <Link to="/support">Support</Link>
                   </li>
                   <li>
-                     <Link to="https://web.facebook.com/hermipkevehs/" target="_blank">
+                     <Link to="https://facebook.com/nerishandmadeknits" target="_blank">
                         <FaFacebook size="2rem" />
                      </Link>
                   </li>
