@@ -19,7 +19,7 @@ const Background = styled.div`
 const LogInModal = () => {
    const [{ showModal, isLogin, buttonClicked }, dispatch] = useContext(GlobalContext);
    return (
-      <>
+      <React.Fragment>
          {showModal ? (
             <Background>
                <div className="flex flex-col items-center justify-around place-self-center space-y-12">
@@ -37,7 +37,7 @@ const LogInModal = () => {
                </div>
             </Background>
          ) : null}
-      </>
+      </React.Fragment>
    );
 };
 

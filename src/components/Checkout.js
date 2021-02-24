@@ -16,7 +16,7 @@ const Background = styled.div`
 
 const Checkout = ({ clicked, handleClicked }) => {
    return (
-      <>
+      <React.Fragment>
          {clicked ? (
             <Background>
                <div className="bg-white w-1/3 h-1/2 self-center flex items-center relative">
@@ -33,7 +33,7 @@ const Checkout = ({ clicked, handleClicked }) => {
                </div>
             </Background>
          ) : null}
-      </>
+      </React.Fragment>
    );
 };
 

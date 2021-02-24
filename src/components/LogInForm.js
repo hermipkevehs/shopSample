@@ -1,25 +1,14 @@
 import React, { useContext } from "react";
-import styled from "styled-components";
 import { FcGoogle } from "react-icons/fc";
 import { FaFacebookSquare } from "react-icons/fa";
 import { GlobalContext } from "../context/GlobalProvider";
 import { Link } from "gatsby";
 
-const Background = styled.div`
-   width: 100vw;
-   height: 100vh;
-   background-color: #ffffff;
-   position: fixed;
-   top: 0;
-   z-index: 20;
-   display: flex;
-   justify-content: center;
-`;
 
 const LogInForm = () => {
    const [{ isLogin }] = useContext(GlobalContext);
    return (
-      <>
+      <React.Fragment>
          <div className="flex flex-col space-y-8">
             <form action="">
                <div className="flex flex-col space-y-4">
@@ -45,8 +34,8 @@ const LogInForm = () => {
                </Link>
             </div>
          </div>
-      </>
+      </React.Fragment>
    );
 };
 
-export default LogInForm;
+export default LogInForm

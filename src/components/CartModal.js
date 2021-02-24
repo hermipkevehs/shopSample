@@ -20,7 +20,7 @@ const Background = styled.div`
 const CartModal = ({ cartClicked, setCartClicked }) => {
    const [productstate, dispatch] = useContext(ProductContext);
    return (
-      <>
+      <React.Fragment>
          {cartClicked ? (
             <Background>
                <div className="w-1/3 bg-white overflow-y-scroll">
@@ -54,7 +54,7 @@ const CartModal = ({ cartClicked, setCartClicked }) => {
                </div>
             </Background>
          ) : null}
-      </>
+      </React.Fragment>
    );
 };
 

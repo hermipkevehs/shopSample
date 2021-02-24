@@ -7,7 +7,7 @@ import { Link } from "gatsby";
 const LoginMain = () => {
    const [{ isLogin }, dispatch] = useContext(GlobalContext);
    return (
-      <>
+      <React.Fragment>
          <div className="space-y-6 text-white">
             <Link to="https://web.facebook.com/?_rdc=3&_rdr" target="_blank" className="flex space-x-12 items-center bg-blue-800 pr-24 py-2 pl-3 ">
                <FaFacebookSquare color="white" size="2rem" />
@@ -28,7 +28,7 @@ const LoginMain = () => {
                {isLogin ? "Log in" : "Sign-up"} with Email
             </button>
          </div>
-      </>
+      </React.Fragment>
    );
 };
 
