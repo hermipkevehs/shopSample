@@ -4,9 +4,6 @@
    "description": "Sample E-commerce website",
    "main": "index.js",
    "license": "MIT",
-   "scripts": {
-      "deploy": "gatsby build --prefix-paths && gh-pages -d public"
-   },
    "dependencies": {
       "babel-plugin-styled-components": "^1.12.0",
       "gatsby": "^2.31.1",
