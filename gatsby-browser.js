@@ -1,7 +1,7 @@
-import React from 'react'
-import { GlobalProvider } from './src/context/GlobalProvider';
-import { ProductProvider } from './src/context/ProductProvider'
-import './src/styles/global.css'
+const React = require('react')
+const GlobalProvider = require('./src/context/GlobalProvider');
+const ProductProvider = require('./src/context/ProductProvider')
+require('./src/styles/global.css')
 
 export const wrapRootElement = ({ element }) => {
    return (
