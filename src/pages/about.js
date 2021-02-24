@@ -16,7 +16,7 @@ const about = () => {
                <p>Doubt it? Try it!</p>
                <p>
                   Please check out, like, and share our products on our official Facebook Page: 
-                  <Link to="https://www.facebook.com/nerishandmadeknits"> Neri's Handmade Knits</Link>
+                  <Link to="https://www.facebook.com/nerishandmadeknits" target="_blank"> Neri's Handmade Knits</Link>
                </p>
             </div>
          </div>
