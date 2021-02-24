@@ -1,7 +1,6 @@
 import React, { useState, useContext } from "react";
-import { graphql, Link } from "gatsby";
+import { graphql} from "gatsby";
 import Layout from "../components/Layout";
-import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import Image from "gatsby-image";
 import { Color } from "../styles/ProductStyles";
 import { ProductContext } from "../context/ProductProvider";

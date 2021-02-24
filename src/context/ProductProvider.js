@@ -29,7 +29,6 @@ const ProductReducer = (state, action) => {
                cartItems: state.cartItems.filter((x) => x.payload.products.slug !== action.payload.products.slug),
             };
          }
-
       default:
          return state;
    }
